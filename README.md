@@ -1,5 +1,6 @@
 # Active Directory Kill Chain & Ransomware Simulation
-(screenshots/dc-encrypted copy)
+
+(screenshots/dc-encrypted-copy.png)
 
 
 ## Project Overview
