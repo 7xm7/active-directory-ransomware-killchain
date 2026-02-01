@@ -1,10 +1,6 @@
 # Active Directory Kill Chain & Ransomware Simulation
 
-![Windows Server](https://img.shields.io/badge/Windows%20Server-0078D6?style=for-the-badge&logo=windows-server&logoColor=white)
-![Active Directory](https://img.shields.io/badge/Active%20Directory-FFB900?style=for-the-badge&logo=microsoft&logoColor=black)
-![PowerShell](https://img.shields.io/badge/PowerShell-53C1DE?style=for-the-badge&logo=powershell&logoColor=white)
-![Kali Linux](https://img.shields.io/badge/Kali%20Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
 
 ## Project Overview
 
