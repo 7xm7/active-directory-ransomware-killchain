@@ -51,7 +51,7 @@ The extracted ticket was subjected to offline cracking using **John the Ripper**
 
 With administrative credentials obtained, **secretsdump.py** was used to extract the NTDS.dit database, yielding all domain password hashes including `xavier.admin` and the built-in `Administrator` account.
 
-![Figure 5: Complete domain credential dump](kerberoasting 3.jpg)  
+![Image 5: Complete domain credential dump](screenshots/kerberoasting3.png)  
 *Figure 5: Full domain compromise confirmed via NTDS.dit extraction.*
 
 **Technical Note**: Achieving Domain Admin privileges represents complete organizational compromise. At this stage, all systems, data, and credentials become accessible to the attacker.
@@ -72,7 +72,7 @@ This methodology also reflects real world scenarios where threat actors maintain
 
 The primary defensive control encountered was **Windows Defender** real-time protection. Evasion was achieved by leveraging Domain Admin privileges to configure folder exclusions, simulating a realistic post-exploitation scenario where attackers manipulate security policies after gaining administrative access.
 
-![Figure 6: Remote administrative session](xfreerdp.jpg)  
+![Image 6: Remote administrative session](screenshots/xfreerdp.png)  
 *Figure 6: Remote administrative session established via xfreerdp.*
 
 ### Payload Analysis
@@ -100,9 +100,9 @@ $HTMLContent | Out-File -FilePath $RansomNotePath
 
 Simultaneous ransomware deployment across all three systems:
 
-![Figure 8: DC01 encrypted](dc-encrypted.jpg)  
-![Figure 9: APINTO-PC encrypted](apinto-encrypted.jpg)  
-![Figure 10: PMARTINS-PC encrypted](pmartins-encrypted.jpg)  
+![Image 8: DC01 encrypted](screenshots/dc-encrypted.png)  
+![Image 9: APINTO-PC encrypted](screenshots/apinto-encrypted.png)  
+![Image 10: PMARTINS-PC encrypted](screenshots/pmartins-encrypted.png)  
 *Figures 8-10: Domain-wide encryption achieved. All target files renamed to `.locked` with ransom notifications deployed.*
 
 ---
