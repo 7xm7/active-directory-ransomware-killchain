@@ -1,6 +1,6 @@
 # Active Directory Kill Chain & Ransomware Simulation
 
-(screenshots/dc-encrypted-copy.png)
+![Ransomware](screenshots/dc-encryptedcopy.png)
 
 
 ## Project Overview
@@ -102,7 +102,13 @@ $HTMLContent | Out-File -FilePath $RansomNotePath
 Simultaneous ransomware deployment across all three systems:
 
 ![Image 8: DC01 encrypted](screenshots/dc-encrypted.png)  
+
+---
+
 ![Image 9: APINTO-PC encrypted](screenshots/apinto-encrypted.png)  
+
+---
+
 ![Image 10: PMARTINS-PC encrypted](screenshots/pmartins-encrypted.png)  
 *Figures 8-10: Domain-wide encryption achieved. All target files renamed to `.locked` with ransom notifications deployed.*
 
@@ -132,7 +138,7 @@ Get-ChildItem -Path $TargetDirectory -Recurse -Filter "*.locked" | ForEach-Objec
 # Cleanup: Removing the ransom notification
 Remove-Item -Path (Join-Path $TargetDirectory "READ_ME.html") -Force
 ```
-
+![Recovery key](screenshots/recoverykey.png)
 
 This verification step confirmed the simulation remained controlled and that all encryption operations were technically safe and fully reversible.
 
