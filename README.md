@@ -20,7 +20,7 @@ This project documents a comprehensive cyberattack simulation against a Windows 
 
 The initial phase focused on data collection and mapping the Active Directory environment. I utilized a Python-based ingestor to extract domain objects, followed by BloodHound to analyze the ingested data and identify critical misconfigurations within the trust hierarchy.
 
-[IMAGE: ingestor.jpg] Figure 1: Executing the data ingestor to enumerate domain users, groups, and GPOs.
+[IMAGE: ingestor.jpg](screenshots/ingestor.jpg) Figure 1: Executing the data ingestor to enumerate domain users, groups, and GPOs.
 
 [IMAGE: bloodhound.jpg] Figure 2: Analyzing attack paths via BloodHound to identify the shortest route to Domain Admin.
 
