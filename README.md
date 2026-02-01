@@ -20,9 +20,9 @@ This project documents a comprehensive cyberattack simulation against a Windows 
 
 The initial phase focused on data collection and mapping the Active Directory environment. I utilized a Python-based ingestor to extract domain objects, followed by BloodHound to analyze the ingested data and identify critical misconfigurations within the trust hierarchy.
 
-[IMAGE: ingestor.jpg](screenshots/ingestor.jpg) Figure 1: Executing the data ingestor to enumerate domain users, groups, and GPOs.
+![Image1: ingestor.png](screenshots/ingestor.png) Figure 1: Executing the data ingestor to enumerate domain users, groups, and GPOs.
 
-[IMAGE: bloodhound.jpg] Figure 2: Analyzing attack paths via BloodHound to identify the shortest route to Domain Admin.
+![Image2: bloodhound.png](screenshots/bloodhound.png) Figure 2: Analyzing attack paths via BloodHound to identify the shortest route to Domain Admin.
 
 
 **Observation**: Even in a minimal lab environment, the interconnectedness of accounts and permissions creates exploitable paths. Production environments with larger user bases would present significantly more attack vectors.
@@ -37,14 +37,14 @@ This phase demonstrated exploitation of Kerberos protocol vulnerabilities to esc
 
 Targeted the `sqlsvc` Service Principal Name (SPN) using **GetUserSPNs.py** to extract TGS tickets. Kerberoasting is particularly effective because ticket extraction is a legitimate Kerberos operation that typically doesn't trigger security alerts.
 
-![Figure 3: SPN ticket extraction](kerberoasting.jpg)  
+![Image3: SPN ticket extraction](screenshots/kerberoasting.png) 
 *Figure 3: TGS ticket extraction using Impacket's GetUserSPNs tool.*
 
 ### Offline Password Cracking
 
 The extracted ticket was subjected to offline cracking using **John the Ripper**. The service account password (`Teste1234!`) was recovered within minutes. Since the credential was not present in the default wordlists, I utilized a custom mutation strategy. By combining base dictionary terms with common patterns observed in the local region and culture, I successfully identified the password. This highlights that even "custom" passwords follow predictable patterns that can be bypassed with targeted wordlist manipulation.
 
-![Figure 4: Successful credential recovery](kerberoasting 2.jpg)  
+![Image4: Successful credential recovery](screenshots/kerberoasting2.png)  
 *Figure 4: sqlsvc password successfully cracked. Weak service account credentials remain a critical vulnerability.*
 
 ### Domain Database Extraction
