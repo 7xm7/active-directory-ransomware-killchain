@@ -73,7 +73,7 @@ By bypassing these controls, the simulation focuses on the behavioral impact of 
 
 ### Design Considerations
 
-To maintain infrastructure operability for post-compromise analysis, the encryption targeted specific high value directories (`C:\Database`) rather than entire system drives. This approach simulates surgical ransomware attacks while preserving the infrastrucure environment for continued research.
+To maintain infrastructure operability for post-compromise analysis, the encryption targeted specific high value directories (`C:\Database`) rather than entire system drives. This approach simulates surgical ransomware attacks while preserving the infrastructure environment for continued research.
 
 This methodology also reflects real world scenarios where threat actors maintain partial system functionality to facilitate data exfiltration or maximize ransom leverage.
 
@@ -83,6 +83,8 @@ The primary defensive control encountered was **Windows Defender** real-time pro
 
 ![Image 6: Remote administrative session](screenshots/xfreerdp.png)  
 *Figure 6: Remote administrative session established via xfreerdp.*
+
+Note: Administrative manual intervention was used to streamline the simulation. In a production environment, a Domain Admin would achieve the same result via GPO-enforced deactivation of security providers.
 
 ### Payload Analysis
 
@@ -126,7 +128,6 @@ Simultaneous ransomware deployment across all three systems:
 
 Following impact demonstration, the recovery protocol was executed to ensure complete data reversibility and validate the encryption mechanism's integrity.
 ```powershell
-
 # Recovery Protocol
 # Reverts the .locked extension to restore original file access
 
