@@ -61,7 +61,15 @@ With administrative credentials obtained, **secretsdump.py** was used to extract
 
 ## 🔥 3. Targeted Impact (Ransomware Execution)
 
-For the impact phase, a custom encryption stager was developed and deployed across the domain infrastructure.
+For the impact phase, a custom encryption stager was developed and deployed across the domain infrastructure. While a Domain Admin has the privileges to disable security controls via Group Policy Objects (GPOs), for the efficiency of this simulation and to focus on the encryption logic, real-time protection was manually adjusted.
+
+In a real-world scenario, this phase would involve:
+
+GPO Manipulation: Using administrative rights to push a policy that disables Windows Defender across the domain.
+
+Exclusion Injection: Adding the malware's working directory to the exclusion list via PowerShell (Add-MpPreference -ExclusionPath).
+
+By bypassing these controls, the simulation focuses on the behavioral impact of the ransomware rather than the signature-based detection, which is often trivial once Domain Admin access is achieved.
 
 ### Design Considerations
 
